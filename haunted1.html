@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-        <title>abc</title>
+        <title>Horror Game</title>
         <meta charset="utf-8">
         <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
-        <link rel="preload" href="C:\Users\Dayatri\Documents\PRANK\scarsong.mp3" as="audio">
-        <link rel="preload" href="C:\Users\Dayatri\Documents\halloween\Scary boo\Scary boo\sacry face.jpg" as="image">
+        <link rel="preload" href="scarsong.mp3" as="audio">
+        <link rel="preload" href="sacry face.jpg" as="image">
  <style>
              body{
 margin:0;
@@ -231,14 +231,14 @@ z-index:-1;
 <body>
 <link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
 <video autoplay loop muted plays-inline class="back-video">
-              <source src="C:\Users\Dayatri\Downloads\hauntedvideo.mp4" type="video/mp4">
+              <source src="hauntedvideo.mp4" type="video/mp4">
         </video>
   
                     
 <!-- Audio element with loop attribute -->
 <audio id="haunted-audio" loop>
    
-    <source src="C:\Users\Dayatri\Downloads\hauntedvoice1.mp3" type="audio/mp3">
+    <source src="hauntedvoice1.mp3" type="audio/mp3">
     Your browser does not support the audio element.
 </audio>
 
@@ -282,12 +282,12 @@ Listen carefully to background sounds, whispers, and music cues.<br><br>Now, emb
 
 <div id="video-container" style="display: none;">
         <video id="mansion-video" width="100%" height="100%" controls onended="videoEnded()">
-            <source src="C:\Users\Dayatri\Downloads\mansionvideo.mp4" type="video/mp4">
+            <source src="mansionvideo.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
         <audio id="mansion-audio" loop>
-            <source src="C:\Users\Dayatri\Downloads\mansionaudio.mp3" type="audio/mp3">
+            <source src="mansionaudio.mp3" type="audio/mp3">
             Your browser does not support the audio element.
         </audio>
     </div>
@@ -296,21 +296,21 @@ Listen carefully to background sounds, whispers, and music cues.<br><br>Now, emb
         <!-- Chapter 1 Card -->
         <div class="chapter-card">
             <h3>The Whispering Woods</h3>
-            <img src="C:\Users\Dayatri\Downloads\darkwood.jpg" alt="Chapter 1 Image">
+            <img src="darkwood.jpg" alt="Chapter 1 Image">
             <button onclick="loadChapter(1)">Chapter1</button>
         </div>
 
         <!-- Chapter 2 Card -->
         <div class="chapter-card" onmouseover="playHoverSound()" onmouseout="resetHoverSound()">
             <h3>A Mansion's Tale</h3>
-            <img src="C:\Users\Dayatri\Downloads\darkhouse.jpg" alt="Chapter 2 Image">
+            <img src="darkhouse.jpg" alt="Chapter 2 Image">
             <button onclick="loadChapter(2)">Chapter2</button>
         </div>
 
         <!-- Chapter 3 Card -->
         <div class="chapter-card" onmouseover="playHoverSound()" onmouseout="resetHoverSound()">
             <h3>Unveiling the Enigma</h3>
-            <img src="C:\Users\Dayatri\Downloads\darkcrow.png" alt="Chapter 3 Image">
+            <img src="darkcrow.png" alt="Chapter 3 Image">
             <button onclick="loadChapter(3)">Chapter3</button>
         </div>
     </div>
@@ -344,7 +344,7 @@ Listen carefully to background sounds, whispers, and music cues.<br><br>Now, emb
             if (quitConfirmation) {
                 // If the user clicks "YES"
                 // Replace 'destination.html' with the actual path of your destination page
-                window.location.replace("horror.html");
+                window.location.replace("index.html");
             } else {
                 // If the user clicks "NO" or cancels the confirmation
                 alert("You chose not to quit. Welcome back!");
@@ -361,9 +361,9 @@ Listen carefully to background sounds, whispers, and music cues.<br><br>Now, emb
                     choicesElement.innerHTML = '<button onclick="makeChoice(3)">Follow the right direction</button>' +
                         '<button onclick="makeChoice(4)">Go in the middle of the dark forest</button>';
                    
-                    playSpookySound("C:\\Users\\Dayatri\\Downloads\\whispers.mp3");
+                    playSpookySound("whispers.mp3");
             
-                    displaySpookyImage("C:\\Users\\Dayatri\\Downloads\\right-arrow.png");
+                    displaySpookyImage("right-arrow.png");
                    
 
                    break;
@@ -376,9 +376,9 @@ Listen carefully to background sounds, whispers, and music cues.<br><br>Now, emb
                     storyElement.textContent = "As you follow the right direction, a shadowy figure appears...a feeling that someone is watching you makes you feel shiver";
                     choicesElement.innerHTML = '<button onclick="makeChoice(7)">Confront the unseen presence</button>' +
                         '<button onclick="makeChoice(8)">Run back</button>';
-                    playSpookySound("C:\\Users\\Dayatri\\Downloads\\thriller-score.mp3");
+                    playSpookySound("thriller-score.mp3");
                      
-                    displaySpookyImage("C:\\Users\\Dayatri\\Downloads\\dark-man-shadow.jpg");
+                    displaySpookyImage("dark-man-shadow.jpg");
                     break;
                 case 4:
                     storyElement.textContent = "You decide to retreat from the door, feeling a sense of unease.";
@@ -395,15 +395,15 @@ Listen carefully to background sounds, whispers, and music cues.<br><br>Now, emb
                     choicesElement.innerHTML = '<button onclick="makeChoice(10)">Take the left path.</button>' +
                         '<button onclick="makeChoice(10)">Venture down the right path.</button>';
                    
-                     displaySpookyImage("C:\\Users\\Dayatri\\Downloads\\manrunning.jpg");
+                     displaySpookyImage("manrunning.jpg");
 
                     break;
                case 10:
                     storyElement.textContent = "You continue exploring, finding more mysteries in the dark woods and see a dark, small lake. The air becomes colder, and an unnatural quiet settles over the area. The whispers, now more like hushed murmurs, seem to emanate from the depths of the mysterious lake.";
                     choicesElement.innerHTML = '<button onclick="makeChoice(12)">Approach the lake </button>' +
                         '<button onclick="makeChoice(14)">Bypass the lake</button>';
-                     playSpookySound("C:\\Users\\Dayatri\\Downloads\\ambient_coimbatore_lake.mp3");
-                     displaySpookyImage("C:\\Users\\Dayatri\\Downloads\\lake.jpg");
+                     playSpookySound("ambient_coimbatore_lake.mp3");
+                     displaySpookyImage("lake.jpg");
                     break;
                 case 11:
                     storyElement.textContent = "The corridor becomes increasingly unsettling, but you press on.";
@@ -413,16 +413,16 @@ Listen carefully to background sounds, whispers, and music cues.<br><br>Now, emb
                     storyElement.textContent = "As you approach the water's edge, the whispers grow more distinct, forming fragmented sentences that echo through the stillness. The dark lake seems to hold a secret, a tale of the past shrouded in mystery.";
                     choicesElement.innerHTML = '<button onclick="makeChoice(13)">Listen closely to the whispers.</button>' +
                         '<button onclick="makeChoice(14)">Avoid the whispers.</button>';
-                     playSpookySound("C:\\Users\\Dayatri\\Downloads\\whispers.mp3");
-                     displaySpookyImage("C:\\Users\\Dayatri\\Downloads\\closelake.jpg");
+                     playSpookySound("whispers.mp3");
+                     displaySpookyImage("closelake.jpg");
  
                     break;
                    case 13:
                     storyElement.textContent = "As you linger by the dark lake, the moonlight flickers, revealing ghostly reflections on the water's surface, and listen some murmuring 'GOBACK' ";
                     choicesElement.innerHTML = '<button onclick="makeChoice(15)">Turn away and continue through the woods.</button>' +
                         '<button onclick="makeChoice(14)">Cross the lake and see the other side of woods</button>';
-                     playSpookySound("C:\\Users\\Dayatri\\Downloads\\goback.mp3");
-                     displaySpookyImage("C:\\Users\\Dayatri\\Downloads\\scarlake.webp");
+                     playSpookySound("goback.mp3");
+                     displaySpookyImage("scarlake.webp");
                     break;
                 case 14:
                     storyElement.textContent = "You turn to face whatever's behind you, but there's nothing there.";
@@ -432,16 +432,16 @@ Listen carefully to background sounds, whispers, and music cues.<br><br>Now, emb
                     storyElement.textContent = "Continuing through the dense woods, the trees become more twisted, their branches forming intricate patterns against the moonlit sky. The whispers intensify, morphing into a haunting melody that seems to emanate from the very heart of the forest.";
                     choicesElement.innerHTML = '<button onclick="makeChoice(16)">Follow the haunting melody.</button>' +
                         '<button onclick="makeChoice(14)">Ignore the melody and press on.</button>';
-                     playSpookySound("C:\\Users\\Dayatri\\Downloads\\horrormelody.mp3");
-                     displaySpookyImage("C:\\Users\\Dayatri\\Downloads\\melodyback.png");
+                     playSpookySound("horrormelody.mp3");
+                     displaySpookyImage("melodyback.png");
 
                     break;
                 case 16:
                     storyElement.textContent = "As you follow the melody you see a huge old mansion, it looks spooky from outside but you have no option you have to stay there till the dark night goes off. ";
                     choicesElement.innerHTML = '<button onclick="makeChoice(17)">Enter the mansion</button>' +
                         '<button onclick="makeChoice(14)">Find another shelter</button>';
-                    playSpookySound("C:\\Users\\Dayatri\\Downloads\\horrormelody.mp3");
-                    displaySpookyImage("C:\\Users\\Dayatri\\Downloads\\mansion.png");
+                    playSpookySound("horrormelody.mp3");
+                    displaySpookyImage("mansion.png");
                     break;
                  case 17:
                      storyElement.textContent = "Enter the mansion and continue your adventure...";
@@ -449,7 +449,7 @@ Listen carefully to background sounds, whispers, and music cues.<br><br>Now, emb
             // Show the "Enter the mansion" button
             enterMansionButton.style.display = 'block';
 
-            playSpookySound("C:\\Users\\Dayatri\\Downloads\\horrormelody.mp3");
+            playSpookySound("horrormelody.mp3");
             break;
               
             }
@@ -531,7 +531,7 @@ function videoEnded() {
 }
 
     function playHoverSound() {
-        var hoverAudio = new Audio('C:/Users/Dayatri/Downloads/hover-sound.mp3'); // Replace with the actual path to your sound file
+        var hoverAudio = new Audio('hover-sound.mp3'); // Replace with the actual path to your sound file
         hoverAudio.play();
     }
 
