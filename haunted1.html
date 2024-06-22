@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <title>abc</title>
+        <meta charset="utf-8">
+        <link href="https://fonts.googleapis.com/css2?family=Nosifer&display=swap" rel="stylesheet">
+        <link rel="preload" href="C:\Users\Dayatri\Documents\PRANK\scarsong.mp3" as="audio">
+        <link rel="preload" href="C:\Users\Dayatri\Documents\halloween\Scary boo\Scary boo\sacry face.jpg" as="image">
+ <style>
+             body{
+margin:0;
+padding:0;
+display:flex;
+font-family:'Nosifer', cursive;
+justify-content:center;
+align-items:center;
+height:100vh;
+background-image:url(sacry face.jpg);
+background-size:cover;
+}
+ul{
+margin:0;
+padding:0;
+display:flex;
+flex-direction:row-reverse;
+}
+ul li{
+list-style:none;
+color:#980202;
+font-size:60px;
+font-weight:bold;
+letter-spacing:10px;
+filter:blur(1px);
+transition:4s;
+}
+ul li:hover,
+ul li:hover~li{
+transform:rotate(180deg)translatex(-200px);
+transition:2s;
+filter-blur:(20px);
+opacity:0;
+}
+ul li img{
+width:150px;
+height:120px;
+margin-bottom:90px;
+margin-right:90px;
+}
+
+body{
+ font-family:'Poppins',sans-serif;
+}
+.container{
+  width:150%;
+  height:90%;
+  
+  background-size:cover; 
+  background-position:center;
+  align-items:center;
+  display:flex;
+  align-items:center;   
+  justify-content:center;  
+}
+
+
+
+
+
+.back-video{
+position:absolute;
+right:0;
+width:100%;
+bottom:0;
+z-index:-1;
+}
+
+        button {
+            background:linear-gradient(#20C841,#0DB430,#092F11);
+            color: #000;
+            padding: 10px;
+            font-size: 18px;
+            margin-bottom:490px;
+            margin-right:50px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            outline: none;
+            transition: background-color 0.3s ease;
+            font-family: 'Creepster', cursive;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            background:linear-gradient(#A85B17,#6b362d,#2B1706);
+           
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+         .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px; /* Adjust the margin as needed */
+        }
+        audio {
+            display: none;
+        }
+        #game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 390px;
+            margin-right:460px;
+        }
+
+        #story {
+            margin-top: 250px;
+            color:red;
+            font-family:Chiller;
+            font-weight:bold;
+            font-size:31px;
+        }
+
+        #choices {
+            display: flex;
+            justify-content: space-around;
+            margin-top:40px;
+        }
+
+        button {
+            padding: 10px 20px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+        }
+
+#spooky-image {
+        max-width: 80%;
+        max-height: 40%;
+        position: absolute;
+        margin-right:599px;
+        margin-top:300px;
+        transform: translate(-50%, -50%);
+        z-index: 999; /* Make sure it's on top of other elements */
+        border-radius: 10px; /* Add rounded corners if desired */
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.8); /* Add a subtle shadow */
+    }
+
+        
+        #intro-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: fixed;
+            top: 60%;
+            left: 50%;
+            height:80%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+            z-index: 1000; /* Make sure it's on top of other elements */
+        }
+
+#video-container {
+    display: none;
+    position: fixed;
+    top: 30%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    width: 80%; /* Adjust the width as needed */
+    max-width: 100%; /* Set a maximum width if desired */
+    max-height: 90vh; /* Set a maximum height if desired */
+    background-color: black;
+    z-index: 1000;
+}
+
+#mansion-video {
+    width: 120%;
+    height: 60%;
+    object-fit: cover;
+}
+
+        /* Add your additional styles for the chapter container here */
+        #chapter-container {
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            
+            height:60%;
+            width:70%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            color: #fff;
+            z-index: 1001; /* Make sure it's on top of other elements */
+        }
+
+        .chapter-card {
+            text-align: center;
+            width: 60%;
+           
+            margin-top:450px;
+            transition: transform 0.3s ease-in-out;
+        }
+ .chapter-card img {
+        width: 67%;
+        height: 60%;
+        border-radius: 8px; /* Add rounded corners if desired */
+        margin-bottom: 10px;
+    }
+.chapter-card:hover {
+        transform: scale(1.05); /* Increase the size on hover */
+}
+.chapter-card h3 {
+         color:red;
+            font-family:Chiller;
+            font-weight:bold;
+            font-size:31px;
+    }
+
+</style>
+</head>
+<body>
+<link href="https://fonts.googleapis.com/css2?family=Creepster&display=swap" rel="stylesheet">
+<video autoplay loop muted plays-inline class="back-video">
+              <source src="C:\Users\Dayatri\Downloads\hauntedvideo.mp4" type="video/mp4">
+        </video>
+  
+                    
+<!-- Audio element with loop attribute -->
+<audio id="haunted-audio" loop>
+   
+    <source src="C:\Users\Dayatri\Downloads\hauntedvoice1.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+<!-- Play button -->
+<button onclick="playAudio()">Play</button>
+
+<!-- Mute/Unmute button -->
+<button onclick="toggleMute()">Mute/Unmute</button>
+ <button onclick="confirmQuit()">Quit</button>     
+              
+ <button id="enterMansionButton" style="display: none;" onclick="enterMansion()">Enter the mansion</button>
+      
+ 
+   <div id="game-container">
+        <div id="story">Welcome to the Horror Adventure Game. You find yourself in a dark, creepy woods...As you delve deeper into the woods, the trees seem to lean in, whispering secrets in a language only they understand.</div>
+        <div id="choices">
+            <button onclick="makeChoice(1)">Follow the whispering sounds</button>
+            <button onclick="makeChoice(2)">Try to find a different path</button>
+        </div>
+    </div>
+
+<audio id="spooky-audio">
+    <source src="" type="audio/mp3">
+    Your browser does not support the audio element.
+</audio>
+
+<img id="spooky-image" src="" alt="Spooky Image" style="display:none;">
+
+<div id="intro-form">
+        <h3 style="color:red">Welcome to the Horror Adventure Game.</h3>
+        <p style="color: skyblue">In a dark forest, where the trees hide the moon, you're all alone. The sounds are strange, and every step feels mysterious. It's a magical place, where shadows and whispers play tricks. You've entered a world where things get fascinating, and you'll need courage. Get ready for an adventure in the heart of the unknown woods.</p>
+        <h4 style="color:yellow">How to Play:</h4>
+        <p style="color:#D6B235">Navigation:
+Use the buttons presented in the story to make choices.
+Your decisions will shape the course of the adventure.<br><br>Audio Experience:
+Enable audio for a fully immersive experience.
+Listen carefully to background sounds, whispers, and music cues.<br><br>Now, embark on your chilling adventure and see where your choices lead you. Good luck!</p>
+       <button onclick="startGame()">Ready to explore</button>
+  </div>
+
+
+<div id="video-container" style="display: none;">
+        <video id="mansion-video" width="100%" height="100%" controls onended="videoEnded()">
+            <source src="C:\Users\Dayatri\Downloads\mansionvideo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <audio id="mansion-audio" loop>
+            <source src="C:\Users\Dayatri\Downloads\mansionaudio.mp3" type="audio/mp3">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+
+<div id="chapter-container" onmouseover="playHoverSound()" onmouseout="resetHoverSound()">
+        <!-- Chapter 1 Card -->
+        <div class="chapter-card">
+            <h3>The Whispering Woods</h3>
+            <img src="C:\Users\Dayatri\Downloads\darkwood.jpg" alt="Chapter 1 Image">
+            <button onclick="loadChapter(1)">Chapter1</button>
+        </div>
+
+        <!-- Chapter 2 Card -->
+        <div class="chapter-card" onmouseover="playHoverSound()" onmouseout="resetHoverSound()">
+            <h3>A Mansion's Tale</h3>
+            <img src="C:\Users\Dayatri\Downloads\darkhouse.jpg" alt="Chapter 2 Image">
+            <button onclick="loadChapter(2)">Chapter2</button>
+        </div>
+
+        <!-- Chapter 3 Card -->
+        <div class="chapter-card" onmouseover="playHoverSound()" onmouseout="resetHoverSound()">
+            <h3>Unveiling the Enigma</h3>
+            <img src="C:\Users\Dayatri\Downloads\darkcrow.png" alt="Chapter 3 Image">
+            <button onclick="loadChapter(3)">Chapter3</button>
+        </div>
+    </div>
+
+<script>
+    var audioElement = document.getElementById('haunted-audio');
+    var isMuted = false;
+
+    function playAudio() {
+        if (audioElement.paused) {
+            audioElement.play().then(() => {
+                // Autoplay is allowed, perform further actions if needed
+            }).catch((error) => {
+                // Autoplay is not allowed, handle accordingly
+                console.error('Autoplay is not allowed:', error);
+            });
+        }
+    }
+
+    function toggleMute() {
+        if (isMuted) {
+            audioElement.muted = false;
+        } else {
+            audioElement.muted = true;
+        }
+        isMuted = !isMuted;
+    };
+   function confirmQuit() {
+            var quitConfirmation = confirm("Are you sure you want to quit?");
+            
+            if (quitConfirmation) {
+                // If the user clicks "YES"
+                // Replace 'destination.html' with the actual path of your destination page
+                window.location.replace("horror.html");
+            } else {
+                // If the user clicks "NO" or cancels the confirmation
+                alert("You chose not to quit. Welcome back!");
+            }
+        };
+
+ let storyElement = document.getElementById('story');
+        let choicesElement = document.getElementById('choices');
+
+        function makeChoice(choice) {
+            switch (choice) {
+                case 1:
+                    storyElement.textContent = "As you walk through the woods, by hearing the whispers guiding you to a special place. When you arrive, you see a huge tree in the wood of that tree there was a direction towards right";
+                    choicesElement.innerHTML = '<button onclick="makeChoice(3)">Follow the right direction</button>' +
+                        '<button onclick="makeChoice(4)">Go in the middle of the dark forest</button>';
+                   
+                    playSpookySound("C:\\Users\\Dayatri\\Downloads\\whispers.mp3");
+            
+                    displaySpookyImage("C:\\Users\\Dayatri\\Downloads\\right-arrow.png");
+                   
+
+                   break;
+                case 2:
+                    storyElement.textContent = "You walk down the dark corridor, feeling a chilling breeze.";
+                    choicesElement.innerHTML = '<button onclick="makeChoice(10)">Continue down the corridor</button>' +
+                        '<button onclick="makeChoice(11)">Turn back</button>';
+                     break;
+                case 3:
+                    storyElement.textContent = "As you follow the right direction, a shadowy figure appears...a feeling that someone is watching you makes you feel shiver";
+                    choicesElement.innerHTML = '<button onclick="makeChoice(7)">Confront the unseen presence</button>' +
+                        '<button onclick="makeChoice(8)">Run back</button>';
+                    playSpookySound("C:\\Users\\Dayatri\\Downloads\\thriller-score.mp3");
+                     
+                    displaySpookyImage("C:\\Users\\Dayatri\\Downloads\\dark-man-shadow.jpg");
+                    break;
+                case 4:
+                    storyElement.textContent = "You decide to retreat from the door, feeling a sense of unease.";
+                    choicesElement.innerHTML = '<button onclick="makeChoice(9)">Continue exploring</button>' +
+                        '<button onclick="makeChoice(10)">Find a safe place</button>';
+                    break;
+                
+                case 7:
+                    storyElement.textContent = "The figure lunges at you, and everything goes dark...";
+                    choicesElement.innerHTML = '<button onclick="resetGame()">Restart</button>';
+                    break;
+               case 8:
+                    storyElement.textContent = "You try to escape, but the figure follows you...finally you escape from the strange shadow and you find yourself to a crossroads in the woods where multiple paths diverge in different directions, each shrouded in varying degrees of darkness. What will be your next move?";
+                    choicesElement.innerHTML = '<button onclick="makeChoice(10)">Take the left path.</button>' +
+                        '<button onclick="makeChoice(10)">Venture down the right path.</button>';
+                   
+                     displaySpookyImage("C:\\Users\\Dayatri\\Downloads\\manrunning.jpg");
+
+                    break;
+               case 10:
+                    storyElement.textContent = "You continue exploring, finding more mysteries in the dark woods and see a dark, small lake. The air becomes colder, and an unnatural quiet settles over the area. The whispers, now more like hushed murmurs, seem to emanate from the depths of the mysterious lake.";
+                    choicesElement.innerHTML = '<button onclick="makeChoice(12)">Approach the lake </button>' +
+                        '<button onclick="makeChoice(14)">Bypass the lake</button>';
+                     playSpookySound("C:\\Users\\Dayatri\\Downloads\\ambient_coimbatore_lake.mp3");
+                     displaySpookyImage("C:\\Users\\Dayatri\\Downloads\\lake.jpg");
+                    break;
+                case 11:
+                    storyElement.textContent = "The corridor becomes increasingly unsettling, but you press on.";
+                    choicesElement.innerHTML = '<button onclick="resetGame()">Restart</button>';
+                    break;
+                case 12:
+                    storyElement.textContent = "As you approach the water's edge, the whispers grow more distinct, forming fragmented sentences that echo through the stillness. The dark lake seems to hold a secret, a tale of the past shrouded in mystery.";
+                    choicesElement.innerHTML = '<button onclick="makeChoice(13)">Listen closely to the whispers.</button>' +
+                        '<button onclick="makeChoice(14)">Avoid the whispers.</button>';
+                     playSpookySound("C:\\Users\\Dayatri\\Downloads\\whispers.mp3");
+                     displaySpookyImage("C:\\Users\\Dayatri\\Downloads\\closelake.jpg");
+ 
+                    break;
+                   case 13:
+                    storyElement.textContent = "As you linger by the dark lake, the moonlight flickers, revealing ghostly reflections on the water's surface, and listen some murmuring 'GOBACK' ";
+                    choicesElement.innerHTML = '<button onclick="makeChoice(15)">Turn away and continue through the woods.</button>' +
+                        '<button onclick="makeChoice(14)">Cross the lake and see the other side of woods</button>';
+                     playSpookySound("C:\\Users\\Dayatri\\Downloads\\goback.mp3");
+                     displaySpookyImage("C:\\Users\\Dayatri\\Downloads\\scarlake.webp");
+                    break;
+                case 14:
+                    storyElement.textContent = "You turn to face whatever's behind you, but there's nothing there.";
+                    choicesElement.innerHTML = '<button onclick="resetGame()">Restart</button>';
+                    break;
+                case 15:
+                    storyElement.textContent = "Continuing through the dense woods, the trees become more twisted, their branches forming intricate patterns against the moonlit sky. The whispers intensify, morphing into a haunting melody that seems to emanate from the very heart of the forest.";
+                    choicesElement.innerHTML = '<button onclick="makeChoice(16)">Follow the haunting melody.</button>' +
+                        '<button onclick="makeChoice(14)">Ignore the melody and press on.</button>';
+                     playSpookySound("C:\\Users\\Dayatri\\Downloads\\horrormelody.mp3");
+                     displaySpookyImage("C:\\Users\\Dayatri\\Downloads\\melodyback.png");
+
+                    break;
+                case 16:
+                    storyElement.textContent = "As you follow the melody you see a huge old mansion, it looks spooky from outside but you have no option you have to stay there till the dark night goes off. ";
+                    choicesElement.innerHTML = '<button onclick="makeChoice(17)">Enter the mansion</button>' +
+                        '<button onclick="makeChoice(14)">Find another shelter</button>';
+                    playSpookySound("C:\\Users\\Dayatri\\Downloads\\horrormelody.mp3");
+                    displaySpookyImage("C:\\Users\\Dayatri\\Downloads\\mansion.png");
+                    break;
+                 case 17:
+                     storyElement.textContent = "Enter the mansion and continue your adventure...";
+                      choicesElement.innerHTML = '<button onclick="makeChoice(14)">OR Find another shelter</button>';
+            // Show the "Enter the mansion" button
+            enterMansionButton.style.display = 'block';
+
+            playSpookySound("C:\\Users\\Dayatri\\Downloads\\horrormelody.mp3");
+            break;
+              
+            }
+        }
+
+        function resetGame() {
+            storyElement.textContent = "Welcome to the Horror Adventure Game. You find yourself in a dark, creepy woods...As you delve deeper into the woods, the trees seem to lean in, whispering secrets in a language only they understand.";
+            choicesElement.innerHTML = '<button onclick="makeChoice(1)">Follow the whispering sounds</button>' +
+                '<button onclick="makeChoice(2)">Try to find a different path</button>';
+        };
+       
+
+        function playSpookySound(soundPath) {
+            var spookyAudio = document.getElementById('spooky-audio');
+            spookyAudio.src = soundPath;
+            spookyAudio.play().then(() => {
+                // Autoplay is allowed, perform further actions if needed
+            }).catch((error) => {
+                // Autoplay is not allowed, handle accordingly
+                console.error('Spooky sound autoplay is not allowed:', error);
+            });
+        }
+
+        function displaySpookyImage(imagePath) {
+            var spookyImage = document.getElementById('spooky-image');
+            spookyImage.src = imagePath;
+            spookyImage.style.display = 'block';
+
+            // Add a timeout to make the image disappear after a few seconds
+            setTimeout(function () {
+                spookyImage.style.display = 'none';
+            }, 26000); // Adjust the time (in milliseconds) as needed
+        }
+
+
+function startGame() {
+            // Hide the intro form
+            var introForm = document.getElementById('intro-form');
+            introForm.style.display = 'none';
+
+            // Start the game logic or any other actions you need
+            playAudio();
+        }
+
+function enterMansion() {
+            var gameContainer = document.getElementById('game-container');
+            gameContainer.style.display = 'none';
+
+            var videoContainer = document.getElementById('video-container');
+            videoContainer.style.display = 'block';
+
+            var mansionVideo = document.getElementById('mansion-video');
+            var mansionAudio = document.getElementById('mansion-audio');
+
+            // Play both video and audio
+            mansionVideo.play();
+            mansionAudio.play();
+        }
+
+        function videoEnded() {
+            var videoContainer = document.getElementById('video-container');
+            videoContainer.style.display = 'none';
+
+            var gameContainer = document.getElementById('game-container');
+            gameContainer.style.display = 'block';
+
+            // Continue with the next choices or actions
+            // You can call the function to set up the next part of the game here
+        }
+ var enterMansionButton = document.getElementById('enterMansionButton');
+
+// Inside the videoEnded() function
+function videoEnded() {
+    var videoContainer = document.getElementById('video-container');
+    videoContainer.style.display = 'none';
+
+    var chapterContainer = document.getElementById('chapter-container');
+    chapterContainer.style.display = 'flex'; // or 'block', depending on your styling preference
+}
+
+    function playHoverSound() {
+        var hoverAudio = new Audio('C:/Users/Dayatri/Downloads/hover-sound.mp3'); // Replace with the actual path to your sound file
+        hoverAudio.play();
+    }
+
+</script>
+</body>
+</html>
